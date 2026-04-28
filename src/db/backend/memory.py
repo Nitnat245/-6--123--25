@@ -35,10 +35,16 @@ def create_record(
     if not second_name.strip():
         raise ValueError("Фамилия не может быть пустой.")
 
-    if sex.strip() not in ['М', 'Ж', 'M', 'F']:
-        raise ValueError("Пол должен быть указан как 'М'/'M' или 'Ж'/'F'.")
+    sex_upper = sex.strip().upper()
 
-    # Формирование новой записи
+    if sex_upper in ['М', 'M', 'МУЖ', 'МУЖСКОЙ', 'MALE', 'MAN']:
+        sex_normalized = 'М'
+    elif sex_upper in ['Ж', 'F', 'ЖЕН', 'ЖЕНСКИЙ', 'FEMALE', 'WOMAN']:
+        sex_normalized = 'Ж'
+    else:
+        raise ValueError("Пол должен быть указан как 'М' или 'Ж' (можно писать по-русски или по-английски).")
+
+
     new_record: StudentRecord = (
         student_id,
         first_name.strip().capitalize(),
