@@ -15,3 +15,5 @@ class InvalidNameError(StudentTableError):
 
 class InvalidSexError(StudentTableError):
     pass
+
+
