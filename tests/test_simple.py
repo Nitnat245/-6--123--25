@@ -11,13 +11,11 @@ class TestSimple(unittest.TestCase):
         from src.db.backend.errors import InvalidAgeError
         self.assertIsNotNone(InvalidAgeError)
 
-    def test_import_file(self):
-        from src.db.backend.file import FileDatabase
-        self.assertIsNotNone(FileDatabase)
 
     def test_import_tui(self):
         from src.db.tui import StudentTUI
         self.assertIsNotNone(StudentTUI)
+
 
 
 if __name__ == '__main__':

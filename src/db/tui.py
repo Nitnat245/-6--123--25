@@ -215,3 +215,4 @@ class StudentTUI:
 
             if self.running:
                 input("\nНажмите Enter для продолжения...")
+
