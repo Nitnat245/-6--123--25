@@ -185,6 +185,8 @@ class StudentTUI:
             print(f"\n✓ Удалено записей: {deleted_count}")
         except ValueError as e:
             print(f"\n✗ Ошибка: {e}")
+    def get_db_type_name(self):
+        return type(self.db).__name__
 
     def run(self) -> None:
         print("\n" + "=" * 50)
