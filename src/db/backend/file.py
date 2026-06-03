@@ -51,3 +51,4 @@ class FileDatabase(Database):
         table = Table(tuple(data["columns"]))
         table.records = data["records"]
         return table
+

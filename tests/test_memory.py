@@ -23,3 +23,5 @@ class TestMemory(unittest.TestCase):
         records = self.db.select_records("students")
         self.assertEqual(len(records), 2)
 
+
+

@@ -32,3 +32,4 @@ class Database(ABC):
     @abstractmethod
     def _save_table(self, table_name: str, table: Table) -> None:
         pass
+

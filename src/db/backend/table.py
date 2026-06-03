@@ -44,3 +44,5 @@ class Table:
         table = cls(tuple(data["columns"]))
         table.records = data["records"].copy()
         return table
+
+

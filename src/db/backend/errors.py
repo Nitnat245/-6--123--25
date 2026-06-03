@@ -1,5 +1,5 @@
 class DatabaseError(Exception):
-    """Базовый класс для ошибок базы данных."""
+    """Класс для ошибок базы данных."""
     pass
 
 class TableAlreadyExistsError(DatabaseError):
@@ -7,7 +7,7 @@ class TableAlreadyExistsError(DatabaseError):
     pass
 
 class TableNotFoundError(DatabaseError):
-    """Ошибка при обращении к несуществующей таблице."""
+    """Ошибка при обращении к несуществующей таблицееее 0.0"""
     pass
 
 class MissingColumnError(DatabaseError):
@@ -21,6 +21,8 @@ class UnknownColumnError(DatabaseError):
 class InvalidStorageDataError(DatabaseError):
     """Ошибка при чтении повреждённых данных из файла."""
     pass
+
+
 
 class InvalidAgeError(DatabaseError):
     pass
