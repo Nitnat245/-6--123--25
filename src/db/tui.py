@@ -143,3 +143,4 @@ class StudentTUI:
                 print("Неизвестная команда")
             if self.running:
                 input("\nНажмите Enter...")
+

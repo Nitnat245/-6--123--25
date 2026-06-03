@@ -36,3 +36,18 @@ class FileDatabase(Database):
         with open(path, "w", encoding="utf-8") as f:
             json.dump(table.to_dict(), f, ensure_ascii=False, indent=2)
         print("Сохранение завершено")
+
+    def _serialize_table(self, table):
+        return {
+            "columns": list(table.columns),
+            "records": [record.copy() for record in table.records]
+        }
+
+    def _deserialize_table(self, data):
+        if "columns" not in data or "records" not in data:
+            from .errors import InvalidStorageDataError
+            raise InvalidStorageDataError("Некорректная структура файла")
+        from .table import Table
+        table = Table(tuple(data["columns"]))
+        table.records = data["records"]
+        return table
